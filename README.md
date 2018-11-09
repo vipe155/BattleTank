@@ -20,3 +20,4 @@ Click [here](https://www.udemy.com/unrealcourse?couponCode=GitHubDiscount) to fi
 ## Lecture List 
 
 * BT01 Intro, Notes, Assets
+* BT02 Game Design Document (GDD)
