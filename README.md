@@ -25,4 +25,5 @@ Click [here](https://www.udemy.com/unrealcourse?couponCode=GitHubDiscount) to fi
 * BT04 Creating & Deleting Landscapes
 * BT05 Landscape Setup & Scaling
 * BT06 A Landscaping Process
+* BT07 Upgrading Engine Version
  
