@@ -24,4 +24,5 @@ Click [here](https://www.udemy.com/unrealcourse?couponCode=GitHubDiscount) to fi
 * BT03 Setting Up A GitHub "Repo"
 * BT04 Creating & Deleting Landscapes
 * BT05 Landscape Setup & Scaling
+* BT06 A Landscaping Process
  
