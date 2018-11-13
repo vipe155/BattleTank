@@ -29,5 +29,7 @@ Click [here](https://www.udemy.com/unrealcourse?couponCode=GitHubDiscount) to fi
 * BT08 Using Landscape Layers
 * BT09 Flat Shading Low Poly Landscapes
 * BT10 More Landscaping Tools
-* BT12 Tank Control System
-* BT11 Actors from Multiple Meshes
+* BT11 Tank Control System
+* BT12 Actors from Multiple Meshes
+* BT13 Configuring A Tank
+* BT14 3rd Person Camera Control
