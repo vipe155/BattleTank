@@ -5,7 +5,15 @@
 void ATankPlayerController::BeginPlay()
 {
 	Super::BeginPlay();
-	UE_LOG(LogTemp, Warning, "PlayerController Begin Play");
+	auto ControlledTank = GetControlledTank();
+	if (!ControlledTank)
+	{
+		UE_LOG(LogTemp, Error, TEXT("PlayerController Tank Not Found"));
+	}
+	else
+	{
+		UE_LOG(LogTemp, Warning, TEXT("PlayerController Tank Found: %s"), *(ControlledTank->GetName()));
+	}
 }
 
 ATank* ATankPlayerController::GetControlledTank() const

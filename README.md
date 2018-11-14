@@ -39,5 +39,5 @@ Click [here](https://www.udemy.com/unrealcourse?couponCode=GitHubDiscount) to fi
 * BT18 UI Scale Box, Buttons & Mouse
 * BT19 Controller Ready Navigation
 * BT20 Trial Packaging Your Game 
-* BT22 Delegating to Components
-* BT23 Using virtual and override
+* BT21 Delegating to Components
+* BT22 Using virtual and override
