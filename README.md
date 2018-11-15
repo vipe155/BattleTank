@@ -41,3 +41,4 @@ Click [here](https://www.udemy.com/unrealcourse?couponCode=GitHubDiscount) to fi
 * BT20 Trial Packaging Your Game 
 * BT21 Delegating to Components
 * BT22 Using virtual and override
+* BT23 Creating an AI Controller Class 
