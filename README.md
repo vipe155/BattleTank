@@ -46,3 +46,4 @@ Click [here](https://www.udemy.com/unrealcourse?couponCode=GitHubDiscount) to fi
 * BT25 Add Tick() to PlayerController
 * BT26 Creating an Out Parameter Method
 * BT27 Finding Screen Pixel Coordinates 
+* BT28 Using DeprojectScreenToWorld
