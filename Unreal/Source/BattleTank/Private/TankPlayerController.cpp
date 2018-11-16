@@ -36,9 +36,7 @@ void ATankPlayerController::AimTowardsCrosshair()
 	FVector OutHitLocation; // Out Parameter
 	if (GetSightRayHitLocation(OutHitLocation)) // TODO Raytrace
 	{
-		UE_LOG(LogTemp, Warning, TEXT("Hit Location: %s"), *OutHitLocation.ToString());
-			
-		// TODO Tell controlled tank to aim at point
+		GetControlledTank()->AimAt(OutHitLocation);
 	}
 }
 
@@ -79,6 +77,8 @@ bool ATankPlayerController::GetLookVectorHitLocation(FVector& LookDirection, FVe
 		OutHitLocation = HitResult.Location;
 		return true; 
 	}
+
+	OutHitLocation = FVector(0);
 	return false; // line trace doesn't succeed
 }
 
