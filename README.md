@@ -45,3 +45,4 @@ Click [here](https://www.udemy.com/unrealcourse?couponCode=GitHubDiscount) to fi
 * BT24 Get the Player Controller with C++ 
 * BT25 Add Tick() to PlayerController
 * BT26 Creating an Out Parameter Method
+* BT27 Finding Screen Pixel Coordinates 
