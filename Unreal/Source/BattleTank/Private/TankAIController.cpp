@@ -1,7 +1,7 @@
 // Copyright N. Shepard
 
-#include "Engine/World.h"
 #include "TankAIController.h"
+#include "Engine/World.h"
 
 void ATankAIController::BeginPlay()
 {

@@ -49,3 +49,4 @@ Click [here](https://www.udemy.com/unrealcourse?couponCode=GitHubDiscount) to fi
 * BT28 Using DeprojectScreenToWorld
 * BT29 Using LineTraceSingleByChannel()
 * BT30 Unify Player & AI Aiming
+* BT31 Create Default Sub Objects in C++
