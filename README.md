@@ -53,3 +53,4 @@ Click [here](https://www.udemy.com/unrealcourse?couponCode=GitHubDiscount) to fi
 * BT32 BlueprintCallable()
 * BT33 SuggestProjectileVelocity()
 * BT34 Predict Projectile Landing Point
+* BT35 Using FRotators in Unreal
