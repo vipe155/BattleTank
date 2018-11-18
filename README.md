@@ -51,3 +51,4 @@ Click [here](https://www.udemy.com/unrealcourse?couponCode=GitHubDiscount) to fi
 * BT30 Unify Player & AI Aiming
 * BT31 Create Default Sub Objects in C++
 * BT32 BlueprintCallable()
+* BT33 SuggestProjectileVelocity()
