@@ -52,3 +52,4 @@ Click [here](https://www.udemy.com/unrealcourse?couponCode=GitHubDiscount) to fi
 * BT31 Create Default Sub Objects in C++
 * BT32 BlueprintCallable()
 * BT33 SuggestProjectileVelocity()
+* BT34 Predict Projectile Landing Point
