@@ -55,3 +55,4 @@ Click [here](https://www.udemy.com/unrealcourse?couponCode=GitHubDiscount) to fi
 * BT34 Predict Projectile Landing Point
 * BT35 Using FRotators in Unreal
 * BT36 Using Forward Declarations
+* BT37 BlueprintSpawnableComponent()
