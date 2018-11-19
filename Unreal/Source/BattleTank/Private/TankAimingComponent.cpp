@@ -3,8 +3,8 @@
 #include "TankAimingComponent.h"
 #include "GameFramework/Actor.h"
 #include "Classes/Kismet/GameplayStatics.h"
-#include "TankBarrel.h"
 #include "Engine/World.h"
+#include "TankBarrel.h"
 
 // Sets default values for this component's properties
 UTankAimingComponent::UTankAimingComponent()
@@ -37,6 +37,9 @@ void UTankAimingComponent::AimAt(FVector HitLocation, float LaunchSpeed)
 		StartLocation,
 		HitLocation,
 		LaunchSpeed,
+		false,
+		0,
+		0,
 		ESuggestProjVelocityTraceOption::DoNotTrace
 	);
 	
@@ -47,10 +50,12 @@ void UTankAimingComponent::AimAt(FVector HitLocation, float LaunchSpeed)
 		auto Time = GetWorld()->GetTimeSeconds();
 		UE_LOG(LogTemp, Warning, TEXT("%f : Aim solution found"), Time);
 	}
-
-	// if no solution found do nothing
-	auto Time = GetWorld()->GetTimeSeconds();
-	UE_LOG(LogTemp, Warning, TEXT("%f : No aim solution found"), Time);
+	else
+	{
+		// if no solution found do nothing
+		auto Time = GetWorld()->GetTimeSeconds();
+		UE_LOG(LogTemp, Warning, TEXT("%f : No aim solution found"), Time);
+	}
 }
 
 void UTankAimingComponent::MoveBarrelTowards(FVector AimDirection)
