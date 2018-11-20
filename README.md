@@ -58,3 +58,4 @@ Click [here](https://www.udemy.com/unrealcourse?couponCode=GitHubDiscount) to fi
 * BT37 BlueprintSpawnableComponent()
 * BT38 Review Our Execution Flow
 * BT39 How to Report Bugs
+* BT40 Using Clamp() to Limit Values
