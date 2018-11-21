@@ -60,3 +60,4 @@ Click [here](https://www.udemy.com/unrealcourse?couponCode=GitHubDiscount) to fi
 * BT39 How to Report Bugs
 * BT40 Using Clamp() to Limit Values
 * BT41 CHALLENGE - Turret Rotation
+* BT42 CHALLENGE - Turret Rotation Pt.2
