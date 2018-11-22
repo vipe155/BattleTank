@@ -65,3 +65,4 @@ Click [here](https://www.udemy.com/unrealcourse?couponCode=GitHubDiscount) to fi
 * BT44 Upgrading to Unreal 4.12
 * BT45 Working Round Awkward Bugs
 * BT46 Using SpawnActor<>() to Spawn
+* BT47 SetupPlayerInputComponent

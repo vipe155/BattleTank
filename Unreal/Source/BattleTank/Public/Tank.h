@@ -31,6 +31,7 @@ public:
 
 protected:
 	UTankAimingComponent* TankAimingComponent = nullptr;
+	UTankAimingComponent* TankProjectileComponent = nullptr;
 
 private:
 	
