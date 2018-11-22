@@ -63,3 +63,4 @@ Click [here](https://www.udemy.com/unrealcourse?couponCode=GitHubDiscount) to fi
 * BT42 CHALLENGE - Turret Rotation Pt.2
 * BT43 Setting Up Projectiles
 * BT44 Upgrading to Unreal 4.12
+* BT45 Working Round Awkward Bugs
