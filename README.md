@@ -61,3 +61,4 @@ Click [here](https://www.udemy.com/unrealcourse?couponCode=GitHubDiscount) to fi
 * BT40 Using Clamp() to Limit Values
 * BT41 CHALLENGE - Turret Rotation
 * BT42 CHALLENGE - Turret Rotation Pt.2
+* BT43 Setting Up Projectiles
