@@ -67,3 +67,4 @@ Click [here](https://www.udemy.com/unrealcourse?couponCode=GitHubDiscount) to fi
 * BT46 Using SpawnActor<>() to Spawn
 * BT47 SetupPlayerInputComponent
 * BT48 Making AI Tanks Fire
+* BT49 EditAnywhere vs EditDefaultsOnly
