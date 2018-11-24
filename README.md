@@ -70,3 +70,4 @@ Click [here](https://www.udemy.com/unrealcourse?couponCode=GitHubDiscount) to fi
 * BT49 EditAnywhere vs EditDefaultsOnly
 * BT50 Adding a Quit Button
 * BT51 Setup Track Throttles
+* BT52 ApplyForceAtLocation() in Action
