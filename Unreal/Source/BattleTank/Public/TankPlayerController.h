@@ -28,7 +28,7 @@ private:
 
 	virtual void Tick(float DeltaTime) override;
 
-	UPROPERTY (EditDefaultsOnly)
+	UPROPERTY(EditDefaultsOnly)
 		float CrossHairXLocation = 0.5;
 
 	UPROPERTY(EditDefaultsOnly)

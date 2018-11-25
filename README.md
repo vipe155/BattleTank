@@ -73,3 +73,4 @@ Click [here](https://www.udemy.com/unrealcourse?couponCode=GitHubDiscount) to fi
 * BT52 ApplyForceAtLocation() in Action
 * BT53 Physics Materials & Friction
 * BT54 Fly-by-Wire Control System
+* BT55 Using BlueprintReadOnly
