@@ -76,3 +76,4 @@ Click [here](https://www.udemy.com/unrealcourse?couponCode=GitHubDiscount) to fi
 * BT55 Using BlueprintReadOnly
 * BT56 A Better Component Architecture
 * BT57 Completing Manual Tank Movement
+* BT58 Introducing AI Pathfinding
