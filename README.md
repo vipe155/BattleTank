@@ -74,3 +74,5 @@ Click [here](https://www.udemy.com/unrealcourse?couponCode=GitHubDiscount) to fi
 * BT53 Physics Materials & Friction
 * BT54 Fly-by-Wire Control System
 * BT55 Using BlueprintReadOnly
+* BT56 A Better Component Architecture
+* BT57 Completing Manual Tank Movement
