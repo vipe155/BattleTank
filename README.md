@@ -81,3 +81,4 @@ Click [here](https://www.udemy.com/unrealcourse?couponCode=GitHubDiscount) to fi
 * BT60 DotProduct() Vector Operator
 * BT61 CrossProduct() Vector Operator
 * BT62 Finalising Your Class Code
+* BT63 How to Use Blueprint Variables
