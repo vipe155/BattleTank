@@ -79,3 +79,4 @@ Click [here](https://www.udemy.com/unrealcourse?couponCode=GitHubDiscount) to fi
 * BT58 Introducing AI Pathfinding
 * BT59 Dissecting RequestDirectMove()
 * BT60 DotProduct() Vector Operator
+* BT61 CrossProduct() Vector Operator
