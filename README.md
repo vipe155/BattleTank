@@ -78,3 +78,4 @@ Click [here](https://www.udemy.com/unrealcourse?couponCode=GitHubDiscount) to fi
 * BT57 Completing Manual Tank Movement
 * BT58 Introducing AI Pathfinding
 * BT59 Dissecting RequestDirectMove()
+* BT60 DotProduct() Vector Operator
