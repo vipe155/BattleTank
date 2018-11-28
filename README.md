@@ -83,3 +83,4 @@ Click [here](https://www.udemy.com/unrealcourse?couponCode=GitHubDiscount) to fi
 * BT62 Finalising Your Class Code
 * BT63 How to Use Blueprint Variables
 * BT64 Using Enum(erations) in UE4
+* BT65 Refactoring our Aiming Component
