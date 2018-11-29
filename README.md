@@ -86,3 +86,4 @@ Click [here](https://www.udemy.com/unrealcourse?couponCode=GitHubDiscount) to fi
 * BT65 Refactoring our Aiming Component
 * BT66 Attaching a Debugger to Unreal
 * BT67 Constructor & Begin Play Timing
+* BT68 Decoupling Your Architecture
