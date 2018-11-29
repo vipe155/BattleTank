@@ -85,3 +85,4 @@ Click [here](https://www.udemy.com/unrealcourse?couponCode=GitHubDiscount) to fi
 * BT64 Using Enum(erations) in UE4
 * BT65 Refactoring our Aiming Component
 * BT66 Attaching a Debugger to Unreal
+* BT67 Constructor & Begin Play Timing
