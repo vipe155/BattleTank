@@ -88,3 +88,4 @@ Click [here](https://www.udemy.com/unrealcourse?couponCode=GitHubDiscount) to fi
 * BT67 Constructor & Begin Play Timing
 * BT68 Decoupling Your Architecture
 * BT69 BlueprintImplementableEvent
+* BT70 Using the ensure Assertion
