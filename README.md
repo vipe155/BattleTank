@@ -87,3 +87,4 @@ Click [here](https://www.udemy.com/unrealcourse?couponCode=GitHubDiscount) to fi
 * BT66 Attaching a Debugger to Unreal
 * BT67 Constructor & Begin Play Timing
 * BT68 Decoupling Your Architecture
+* BT69 BlueprintImplementableEvent
