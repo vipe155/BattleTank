@@ -89,3 +89,4 @@ Click [here](https://www.udemy.com/unrealcourse?couponCode=GitHubDiscount) to fi
 * BT68 Decoupling Your Architecture
 * BT69 BlueprintImplementableEvent
 * BT70 Using the ensure Assertion
+* BT71 Dependency Mapping
