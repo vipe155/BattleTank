@@ -1,7 +1,6 @@
 // Copyright N. Shepard
 
 #include "Tank.h"
-#include "TankAimingComponent.h"
 #include "Engine/World.h"
 #include "TankBarrel.h"
 #include "Projectile.h"
@@ -15,17 +14,9 @@ ATank::ATank()
 	auto TankName = GetName();
 }
 
-void ATank::BeginPlay() 
+void ATank::BeginPlay()
 {
 	Super::BeginPlay(); // needed for BP
-
-	TankAimingComponent = FindComponentByClass<UTankAimingComponent>();
-}
-
-void ATank::AimAt(FVector HitLocation)
-{
-	if (!ensure(TankAimingComponent)) { return; }
-	TankAimingComponent->AimAt(HitLocation, LaunchSpeed);
 }
 
 void ATank::Fire()
