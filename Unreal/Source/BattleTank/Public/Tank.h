@@ -37,6 +37,7 @@ private:
 	UPROPERTY(EditDefaultsOnly, Category = Setup)
 		TSubclassOf <AProjectile>ProjectileBlueprint; // Default Value
 
+	// TODO remove once firing is moved
 	UPROPERTY(EditDefaultsOnly, Category = Firing)
 		float LaunchSpeed = 4000; // Default Value
 

@@ -13,13 +13,13 @@ ATank::ATank()
 	PrimaryActorTick.bCanEverTick = false;
 
 	auto TankName = GetName();
-	UE_LOG(LogTemp, Warning, TEXT("%s APOLLO C++ Construct"), *TankName);
 }
 
 void ATank::BeginPlay() 
 {
 	Super::BeginPlay(); // needed for BP
-	UE_LOG(LogTemp, Warning, TEXT("APOLLO C++ BeginPlay"));
+
+	TankAimingComponent = FindComponentByClass<UTankAimingComponent>();
 }
 
 void ATank::AimAt(FVector HitLocation)

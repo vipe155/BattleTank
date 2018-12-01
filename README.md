@@ -90,3 +90,4 @@ Click [here](https://www.udemy.com/unrealcourse?couponCode=GitHubDiscount) to fi
 * BT69 BlueprintImplementableEvent
 * BT70 Using the ensure Assertion
 * BT71 Dependency Mapping
+* BT72 Starting From Green
