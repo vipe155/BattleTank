@@ -39,10 +39,14 @@ public:
 
 protected:
 	UPROPERTY(BlueprintReadOnly, Category = State)
-		EFiringStatus FiringState = EFiringStatus::Aiming;
+		EFiringStatus FiringState = EFiringStatus::Reloading;
 	
 private:
 	UTankAimingComponent();
+
+	virtual void TickComponent(float DeltaTime, enum ELevelTick TickType, FActorComponentTickFunction *ThisTickFunction) override;
+
+	virtual void BeginPlay() override;
 
 	void MoveBarrelTowards(FVector AimDirection);
 
