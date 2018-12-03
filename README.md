@@ -95,3 +95,4 @@ Click [here](https://www.udemy.com/unrealcourse?couponCode=GitHubDiscount) to fi
 * BT74 Finishing our Refactoring
 * BT75 Adding TickComponent() Back
 * BT76 Are Two Floats Equal?
+* BT77 Programmatic Sideways Friction
