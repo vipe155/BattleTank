@@ -24,9 +24,12 @@ void ATankPlayerController::AimTowardsCrosshair()
 	if (!GetPawn()) { return; } // if not possessing
 	auto AimingComponent = GetPawn()->FindComponentByClass<UTankAimingComponent>();
 	if (!ensure(AimingComponent)) { return; }
-
+	
 	FVector OutHitLocation; // Out Parameter
-	if (GetSightRayHitLocation(OutHitLocation)) 
+
+	bool bGotHitLocation = GetSightRayHitLocation(OutHitLocation);
+
+	if (bGotHitLocation) 
 	{
 		AimingComponent->AimAt(OutHitLocation);
 	}
@@ -48,7 +51,7 @@ bool ATankPlayerController::GetSightRayHitLocation(FVector& OutHitLocation) cons
 		// line trace that LookDirection and see what we hit
 		return GetLookVectorHitLocation(LookDirection, OutHitLocation);
 	}
-	return true;
+	return false;
 }
 
 bool ATankPlayerController::GetLookVectorHitLocation(FVector& LookDirection, FVector& OutHitLocation) const
@@ -72,6 +75,24 @@ bool ATankPlayerController::GetLookVectorHitLocation(FVector& LookDirection, FVe
 
 	OutHitLocation = FVector(0);
 	return false; // line trace doesn't succeed
+
+		//const auto CrosshairScreenPosition = GetCrosshairScreenPosition();
+
+		////DrawDebugTracing(CrosshairScreenPosition);
+		//FHitResult HitResult;
+		//if (GetHitResultAtScreenPosition(CrosshairScreenPosition, ECC_Visibility, false, OUT HitResult))
+		//{
+		//	OutHitLocation = HitResult.Location;
+		//}
+		//// if we cant find some physycal body take abstract distant point in the sky passing through camera and crosshair
+		//else
+		//{
+		//	FVector CameraLocation;
+		//	FVector CameraDirection;
+		//	DeprojectScreenPositionToWorld(CrosshairScreenPosition.X, CrosshairScreenPosition.Y, CameraLocation, CameraDirection);
+		//	OutHitLocation = FVector(CameraLocation + CameraDirection * 10000);
+		//}
+
 }
 
 bool ATankPlayerController::GetLookDirection(FVector2D ScreenLocation, FVector& LookDirection) const
