@@ -97,3 +97,4 @@ Click [here](https://www.udemy.com/unrealcourse?couponCode=GitHubDiscount) to fi
 * BT76 Are Two Floats Equal?
 * BT77 Programmatic Sideways Friction
 * BT78 OnComponentHit Event in 4.12
+* BT79 Avoiding Boolean Flags

@@ -1,12 +1,13 @@
 // Copyright N. Shepard
 
 #include "TankTracks.h"
+#include "Engine/World.h"
 
 UTankTracks::UTankTracks()
 {
 	// Set this component to be initialized when the game starts, and to be ticked every frame.  You can turn these features
 	// off to improve performance if you don't need them.
-	PrimaryComponentTick.bCanEverTick = true;
+	PrimaryComponentTick.bCanEverTick = false;
 
 	// ...
 }
@@ -20,12 +21,15 @@ void UTankTracks::BeginPlay()
 
 void UTankTracks::OnHit(UPrimitiveComponent * HitComponent, AActor * OtherActor, UPrimitiveComponent * OtherComponent, FVector NormalImpulse, const FHitResult & Hit)
 {
-	UE_LOG(LogTemp, Warning, TEXT("Hit"));
+	DriveTrack();
+	ApplySidewaysForce();
+	CurrentThrottle = 0;
 }
 
-void UTankTracks::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction * ThisTickFunction)
+void UTankTracks::ApplySidewaysForce()
 {
 	auto SlippageSpeed = FVector::DotProduct(GetRightVector(), GetComponentVelocity());
+	auto DeltaTime = GetWorld()->GetDeltaSeconds();
 
 	//required acceleration this frame to correct motion
 	auto CorrectionAccel = -SlippageSpeed / DeltaTime * GetRightVector();
@@ -39,7 +43,12 @@ void UTankTracks::TickComponent(float DeltaTime, ELevelTick TickType, FActorComp
 
 void UTankTracks::SetThrottle(float Throttle)
 {
-	auto ForceApplied = GetForwardVector() * Throttle * TrackMaxDForce;
+	CurrentThrottle = FMath::Clamp<float>(CurrentThrottle + Throttle, -2, 2);
+}
+
+void UTankTracks::DriveTrack()
+{
+	auto ForceApplied = GetForwardVector() * CurrentThrottle * TrackMaxDForce;
 	auto ForceLocation = GetComponentLocation();
 
 	auto TankRoot = Cast<UPrimitiveComponent>(GetOwner()->GetRootComponent());
