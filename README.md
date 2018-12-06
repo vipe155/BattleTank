@@ -106,3 +106,4 @@ Click [here](https://www.udemy.com/unrealcourse?couponCode=GitHubDiscount) to fi
 * BT85 Preparing for Particles
 * BT86 Introducing Particle Systems
 * BT87 Particle Bounding Boxes
+* BT88 Using FAttachmentTransformRules
