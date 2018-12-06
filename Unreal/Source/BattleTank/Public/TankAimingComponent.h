@@ -61,18 +61,20 @@ private:
 	UTankBarrel* Barrel = nullptr;
 	UTankTurret* Turret = nullptr;
 
+	// Default Values
 	UPROPERTY(EditDefaultsOnly, Category = Setup)
-		TSubclassOf <AProjectile>ProjectileBlueprint; // Default Value
+		TSubclassOf <AProjectile>ProjectileBlueprint; 
 
 	UPROPERTY(EditDefaultsOnly, Category = Firing)
-		float ReloadTimeSeconds = 3; // Default Value
+		float ReloadTimeSeconds = 3; 
 
 	UPROPERTY(EditDefaultsOnly, Category = Firing)
-		float LaunchSpeed = 4000; // Default Value
+		float LaunchSpeed = 4000; 
+
+	UPROPERTY(EditDefaultsOnly, Category = Firing)
+		int32 AmmoCount = 15;
 
 	double LastFireTime = 0;
-
-	int32 AmmoCount = 1;
 
 	FVector AimDirection;
 };
