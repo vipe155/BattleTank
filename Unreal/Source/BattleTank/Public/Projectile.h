@@ -39,6 +39,8 @@ private:
 		URadialForceComponent* ExplosionForce = nullptr;
 	UPROPERTY(EditDefaultsOnly, Category = Setup)
 		float DestroyDelay = 10.0f;
+	UPROPERTY(EditDefaultsOnly, Category = Setup)
+		float ProjDamageAmount = 20.0f;
 
 	UFUNCTION()
 		virtual void OnHit(UPrimitiveComponent* HitComponent, AActor* OtherActor, UPrimitiveComponent* OtherComponent, FVector NormalImpulse, const FHitResult& Hit);
