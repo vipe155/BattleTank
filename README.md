@@ -111,3 +111,4 @@ Click [here](https://www.udemy.com/unrealcourse?couponCode=GitHubDiscount) to fi
 * BT90 Using GetTimerManager()
 * BT91 Using TakeDamage() on Actors
 * BT92 BlueprintPure & Health Bars
+* BT93 The Observer Pattern
