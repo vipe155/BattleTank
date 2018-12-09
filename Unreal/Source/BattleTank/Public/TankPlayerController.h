@@ -42,4 +42,9 @@ private:
 		float LineTraceRange = 1000000;
 
 	bool GetLookVectorHitLocation(FVector& LookDirection, FVector& OutHitLocation) const;
+
+	virtual void SetPawn(APawn* InPawn) override;
+
+	UFUNCTION()
+	void OnPlayerTankDeath();
 };

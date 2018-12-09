@@ -112,3 +112,4 @@ Click [here](https://www.udemy.com/unrealcourse?couponCode=GitHubDiscount) to fi
 * BT91 Using TakeDamage() on Actors
 * BT92 BlueprintPure & Health Bars
 * BT93 The Observer Pattern
+* BT94 Finishing Off - Part 1

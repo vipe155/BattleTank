@@ -2,7 +2,27 @@
 
 #include "TankPlayerController.h"
 #include "Engine/World.h"
+#include "Tank.h"
 #include "TankAimingComponent.h"
+
+void ATankPlayerController::SetPawn(APawn * InPawn)
+{
+	Super::SetPawn(InPawn);
+
+	if (InPawn)
+	{
+		auto PossessedTank = Cast<ATank>(InPawn);
+		if (!ensure(PossessedTank)) { return; }
+
+		// Subscribe our local method to tank death event
+		PossessedTank->TankDeath.AddUniqueDynamic(this, &ATankPlayerController::OnPlayerTankDeath);
+	}
+}
+
+void ATankPlayerController::OnPlayerTankDeath()
+{
+	StartSpectatingOnly();
+}
 
 void ATankPlayerController::BeginPlay()
 {
@@ -75,24 +95,6 @@ bool ATankPlayerController::GetLookVectorHitLocation(FVector& LookDirection, FVe
 
 	OutHitLocation = FVector(0);
 	return false; // line trace doesn't succeed
-
-		//const auto CrosshairScreenPosition = GetCrosshairScreenPosition();
-
-		////DrawDebugTracing(CrosshairScreenPosition);
-		//FHitResult HitResult;
-		//if (GetHitResultAtScreenPosition(CrosshairScreenPosition, ECC_Visibility, false, OUT HitResult))
-		//{
-		//	OutHitLocation = HitResult.Location;
-		//}
-		//// if we cant find some physycal body take abstract distant point in the sky passing through camera and crosshair
-		//else
-		//{
-		//	FVector CameraLocation;
-		//	FVector CameraDirection;
-		//	DeprojectScreenPositionToWorld(CrosshairScreenPosition.X, CrosshairScreenPosition.Y, CameraLocation, CameraDirection);
-		//	OutHitLocation = FVector(CameraLocation + CameraDirection * 10000);
-		//}
-
 }
 
 bool ATankPlayerController::GetLookDirection(FVector2D ScreenLocation, FVector& LookDirection) const
