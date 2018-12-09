@@ -113,3 +113,4 @@ Click [here](https://www.udemy.com/unrealcourse?couponCode=GitHubDiscount) to fi
 * BT92 BlueprintPure & Health Bars
 * BT93 The Observer Pattern
 * BT94 Finishing Off - Part 1
+* BT95 Finishing Off - Part 2
