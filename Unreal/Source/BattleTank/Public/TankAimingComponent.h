@@ -54,7 +54,7 @@ private:
 
 	virtual void BeginPlay() override;
 
-	void MoveBarrelTowards(FVector AimDirection);
+	void MoveBarrelTowards();
 
 	bool IsBarrelMoving();
 
