@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "GameFramework/Actor.h"
+#include "Components/SphereComponent.h"
 #include "SpringWheel.generated.h"
 
 // Forward declaration(s)
@@ -30,8 +31,14 @@ private:
 	void SetupConstraint();
 
 	UPROPERTY(VisibleAnywhere, Category = Components)
-		UStaticMeshComponent* Wheel = nullptr;
+		USphereComponent* Wheel = nullptr;
+
+	UPROPERTY(VisibleAnywhere, Category = Components)
+		USphereComponent* Axle = nullptr;
 
 	UPROPERTY(VisibleAnywhere, Category = Components)
 		UPhysicsConstraintComponent* PhysicsConstraint = nullptr;
+
+	UPROPERTY(VisibleAnywhere, Category = Components)
+		UPhysicsConstraintComponent* PhysicsAxle = nullptr;
 };
