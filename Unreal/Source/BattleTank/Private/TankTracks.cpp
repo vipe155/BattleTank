@@ -14,30 +14,9 @@ UTankTracks::UTankTracks()
 	// ...
 }
 
-TArray<class ASpringWheel*> UTankTracks::GetWheels() const
-{
-	TArray<class ASpringWheel*> ResultArray;
-	TArray < USceneComponent*> Children;
-	GetChildrenComponents(true, Children);
-
-	for (USceneComponent* Child : Children)
-	{
-		auto SpawnPointChild = Cast<USpawnPoint>(Child);
-		if (!SpawnPointChild) { continue; }
-
-		AActor* SpawnedChild = SpawnPointChild->GetSpawnedActor();
-		auto SpringWheel = Cast<ASpringWheel>(SpawnedChild);
-
-		if (!SpringWheel) continue;
-
-		ResultArray.Add(SpringWheel);
-	}
-	return ResultArray;
-}
-
 void UTankTracks::SetThrottle(float Throttle)
 {
-	float CurrentThrottle = FMath::Clamp<float>(Throttle, -2, 2);
+	float CurrentThrottle = FMath::Clamp<float>(Throttle, -1, 1);
 
 	DriveTrack(CurrentThrottle);
 }
@@ -53,4 +32,25 @@ void UTankTracks::DriveTrack(float CurrentThrottle)
 	{
 		Wheel->AddDrivingForce(ForcePerWheel);
 	}
+}
+
+TArray<ASpringWheel*> UTankTracks::GetWheels() const
+{
+	TArray<ASpringWheel*> ResultArray;
+	TArray <USceneComponent*> Children;
+	GetChildrenComponents(true, Children);
+
+	for (USceneComponent* Child : Children)
+	{
+		auto SpawnPointChild = Cast<USpawnPoint>(Child);
+		if (!SpawnPointChild) continue;
+
+		AActor* SpawnedChild = SpawnPointChild->GetSpawnedActor();
+		auto SpringWheel = Cast<ASpringWheel>(SpawnedChild);
+
+		if (!SpringWheel) continue;
+
+		ResultArray.Add(SpringWheel);
+	}
+	return ResultArray;
 }

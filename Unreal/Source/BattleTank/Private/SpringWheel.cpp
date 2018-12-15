@@ -3,12 +3,14 @@
 #include "SpringWheel.h"
 #include "Components/StaticMeshComponent.h" 
 #include "PhysicsEngine/PhysicsConstraintComponent.h"
+#include "Engine/World.h"
 
 // Sets default values
 ASpringWheel::ASpringWheel()
 {
  	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
+	PrimaryActorTick.TickGroup = TG_PostPhysics;
 
 	PhysicsConstraint = CreateDefaultSubobject<UPhysicsConstraintComponent>(FName("Physics Constraint"));
 	SetRootComponent(PhysicsConstraint);
@@ -16,17 +18,20 @@ ASpringWheel::ASpringWheel()
 	Axle = CreateDefaultSubobject<USphereComponent>(FName("Axle"));
 	Axle->SetupAttachment(PhysicsConstraint);
 
-	PhysicsAxle = CreateDefaultSubobject<UPhysicsConstraintComponent>(FName("Physics Axle"));
-	PhysicsAxle->SetupAttachment(Axle);
-
 	Wheel = CreateDefaultSubobject<USphereComponent>(FName("Wheel"));
 	Wheel->SetupAttachment(Axle);
+
+	PhysicsAxle = CreateDefaultSubobject<UPhysicsConstraintComponent>(FName("Physics Axle"));
+	PhysicsAxle->SetupAttachment(Axle);
 }
 
 // Called when the game starts or when spawned
 void ASpringWheel::BeginPlay()
 {
 	Super::BeginPlay();
+
+	Wheel->SetNotifyRigidBodyCollision(true);
+	Wheel->OnComponentHit.AddDynamic(this, &ASpringWheel::OnHit);
 
 	SetupConstraint();
 }
@@ -45,9 +50,23 @@ void ASpringWheel::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
+	if (GetWorld()->TickGroup == TG_PostPhysics)
+	{
+		TotalForceMagnitudeThisFrame = 0;
+	}
 }
 
 void ASpringWheel::AddDrivingForce(float ForceMagnitude)
 {
-	Wheel->AddForce(Axle->GetForwardVector() * ForceMagnitude);
+	TotalForceMagnitudeThisFrame += ForceMagnitude;
+}
+
+void ASpringWheel::OnHit(UPrimitiveComponent * HitComponent, AActor * OtherActor, UPrimitiveComponent * OtherComp, FVector NormalImpluse, const FHitResult & Hit)
+{
+	ApplyForce();
+}
+
+void ASpringWheel::ApplyForce()
+{
+	Wheel->AddForce(Axle->GetForwardVector() * TotalForceMagnitudeThisFrame);
 }

@@ -15,7 +15,6 @@ USpawnPoint::USpawnPoint()
 	// ...
 }
 
-
 // Called when the game starts
 void USpawnPoint::BeginPlay()
 {
@@ -28,7 +27,6 @@ void USpawnPoint::BeginPlay()
 	SpawnedActor->AttachToComponent(this, FAttachmentTransformRules::KeepWorldTransform);
 	UGameplayStatics::FinishSpawningActor(SpawnedActor, GetComponentTransform());
 }
-
 
 // Called every frame
 void USpawnPoint::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
