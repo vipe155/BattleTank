@@ -4,6 +4,7 @@
 
 #include "CoreMinimal.h"
 #include "Components/ActorComponent.h"
+#include "GameFramework/Actor.h"
 #include "TankAimingComponent.generated.h"
 
 // Enum for aiming status
@@ -42,6 +43,9 @@ public:
 	int32 GetRoundsLeft() const;
 
 	EFiringStatus GetFiringState() const;
+
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Gameplay)
+	class USoundBase* FireSound;
 
 protected:
 	UPROPERTY(BlueprintReadOnly, Category = State)

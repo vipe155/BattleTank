@@ -2,6 +2,7 @@
 
 #include "TankAimingComponent.h"
 #include "GameFramework/Actor.h"
+#include "GameFramework/Pawn.h"
 #include "Classes/Kismet/GameplayStatics.h"
 #include "Engine/World.h"
 #include "TankBarrel.h"
@@ -125,11 +126,18 @@ void  UTankAimingComponent::Fire()
 			Barrel->GetSocketLocation(FName("Projectile")),
 			Barrel->GetSocketRotation(FName("Projectile"))
 			);
-
+		
 		Projectile->LaunchProjectile(LaunchSpeed);
 		LastFireTime = FPlatformTime::Seconds();
 
 		AmmoCount--;
+	}
+
+	if (FireSound != NULL)
+	{
+		auto TankLocation = GetWorld()->GetFirstPlayerController()->GetPawn()->GetActorLocation();
+		UGameplayStatics::PlaySoundAtLocation(this, FireSound, TankLocation);
+
 	}
 }
 
