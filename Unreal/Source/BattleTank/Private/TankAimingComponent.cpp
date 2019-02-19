@@ -126,18 +126,17 @@ void  UTankAimingComponent::Fire()
 			Barrel->GetSocketLocation(FName("Projectile")),
 			Barrel->GetSocketRotation(FName("Projectile"))
 			);
-		
+
 		Projectile->LaunchProjectile(LaunchSpeed);
 		LastFireTime = FPlatformTime::Seconds();
 
 		AmmoCount--;
-	}
 
-	if (FireSound != NULL)
-	{
-		auto TankLocation = GetWorld()->GetFirstPlayerController()->GetPawn()->GetActorLocation();
-		UGameplayStatics::PlaySoundAtLocation(this, FireSound, TankLocation);
-
+		if (FireSound != NULL) 
+		{
+			auto TankLocation = GetWorld()->GetFirstPlayerController()->GetPawn()->GetActorLocation();
+			UGameplayStatics::PlaySoundAtLocation(this, FireSound, TankLocation);
+		}
 	}
 }
 

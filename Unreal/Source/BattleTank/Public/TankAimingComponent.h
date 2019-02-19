@@ -44,7 +44,7 @@ public:
 
 	EFiringStatus GetFiringState() const;
 
-	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Gameplay)
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Firing)
 	class USoundBase* FireSound;
 
 protected:

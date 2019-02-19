@@ -2,6 +2,8 @@
 
 #include "TankMovementComponent.h"
 #include "TankTracks.h"
+#include "Classes/Kismet/GameplayStatics.h"
+#include "Engine/World.h"
 
 void UTankMovementComponent::Initialize(UTankTracks* LeftTrackToSet, UTankTracks* RightTrackToSet)
 {
