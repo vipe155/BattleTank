@@ -9,6 +9,7 @@
 #include "TankTurret.h"
 #include "Projectile.h"
 
+
 // Sets default values for this component's properties
 UTankAimingComponent::UTankAimingComponent()
 {
@@ -121,21 +122,22 @@ void  UTankAimingComponent::Fire()
 		if (!ensure(Barrel)) { return; }
 		if (!ensure(ProjectileBlueprint)) { return; }
 
-		auto Projectile = GetWorld()->SpawnActor<AProjectile>(
-			ProjectileBlueprint,
-			Barrel->GetSocketLocation(FName("Projectile")),
-			Barrel->GetSocketRotation(FName("Projectile"))
-			);
+			auto Projectile = GetWorld()->SpawnActor<AProjectile>(
+				ProjectileBlueprint,
+				Barrel->GetSocketLocation(FName("Projectile")),
+				Barrel->GetSocketRotation(FName("Projectile"))
+				);
 
-		Projectile->LaunchProjectile(LaunchSpeed);
-		LastFireTime = FPlatformTime::Seconds();
 
-		AmmoCount--;
+			Projectile->LaunchProjectile(LaunchSpeed);
+			LastFireTime = FPlatformTime::Seconds();
+			AmmoCount--;
+
 
 		if (FireSound != NULL) 
 		{
-			auto TankLocation = GetWorld()->GetFirstPlayerController()->GetPawn()->GetActorLocation();
-			UGameplayStatics::PlaySoundAtLocation(this, FireSound, TankLocation);
+			auto ShellLocation = Barrel->GetSocketLocation(FName("Projectile"));
+			UGameplayStatics::PlaySoundAtLocation(this, FireSound, ShellLocation);
 		}
 	}
 }
