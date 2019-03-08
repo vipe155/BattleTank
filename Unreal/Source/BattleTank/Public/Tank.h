@@ -8,6 +8,16 @@
 
 DECLARE_DYNAMIC_MULTICAST_DELEGATE(FTankDelegate);
 
+// Enum for aiming status
+UENUM()
+enum class ETankStatus : uint8
+{
+	Green,
+	Yellow,
+	Orange,
+	Red
+};
+
 UCLASS()
 class BATTLETANK_API ATank : public APawn
 {
@@ -24,14 +34,32 @@ public:
 	float GetHealthPercent() const;
 
 	FTankDelegate TankDeath;
+
+	ETankStatus GetTankState() const;
+
+protected:
+	UPROPERTY(BlueprintReadOnly, Category = State)
+		ETankStatus TankState = ETankStatus::Green;
 	
 private:
 	ATank();
 
 	virtual void BeginPlay() override;
 
+	virtual void Tick(float DeltaTime) override;
+
 	UPROPERTY(EditDefaultsOnly, Category = Setup)
-	int32 StartingHealth = 100;
+		int32 StartingHealth = 100;
+
+	UPROPERTY(EditDefaultsOnly, Category = Setup)
+		int32 HealthGValue = 80;
+
+	UPROPERTY(EditDefaultsOnly, Category = Setup)
+		int32 HealthYValue = 40;
+
+	UPROPERTY(EditDefaultsOnly, Category = Setup)
+		int32 HealthOValue = 20;
+
 	UPROPERTY(VisibleAnywhere, Category = Health)
-	int32 CurrentHealth; // ini in BeginPlay
+		int32 CurrentHealth; // ini in BeginPlay
 };

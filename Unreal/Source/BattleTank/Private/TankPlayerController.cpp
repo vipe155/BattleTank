@@ -28,8 +28,10 @@ void ATankPlayerController::BeginPlay()
 {
 	Super::BeginPlay();
 	auto AimingComponent = GetPawn()->FindComponentByClass<UTankAimingComponent>();
+	auto TankRef = Cast<ATank>(GetPawn());
 	if (!ensure(AimingComponent)) { return; }
-	FoundAimingComponent(AimingComponent);
+	TankConstructed(AimingComponent, TankRef);
+
 }
 
 // Called every frame
@@ -38,6 +40,7 @@ void ATankPlayerController::Tick(float DeltaTime)
 	Super::Tick( DeltaTime );
 	AimTowardsCrosshair();
 }
+
 
 void ATankPlayerController::AimTowardsCrosshair()
 {

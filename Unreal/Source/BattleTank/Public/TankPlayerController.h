@@ -7,6 +7,7 @@
 #include "TankPlayerController.generated.h"
 
 class UTankAimingComponent;
+class ATank;
 /**
  * 
  */
@@ -17,7 +18,7 @@ class BATTLETANK_API ATankPlayerController : public APlayerController
 	
 protected:
 	UFUNCTION(BlueprintImplementableEvent, Category = Setup)
-		void FoundAimingComponent(UTankAimingComponent* AimingCompRef);
+		void TankConstructed(UTankAimingComponent* AimingCompRef, ATank* TankRef);
 
 private:
 	// Start the tank moving the barrel where crosshair intersects world

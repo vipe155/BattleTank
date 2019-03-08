@@ -8,13 +8,40 @@ ATank::ATank()
 {
 	// Set this pawn to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 
-	//PrimaryActorTick.bCanEverTick = false;
+	PrimaryActorTick.bCanEverTick = true;
 }
 
 void ATank::BeginPlay()
 {
 	Super::BeginPlay();
 	CurrentHealth = StartingHealth;
+}
+
+void ATank::Tick(float DeltaTime)
+{
+	Super::Tick(DeltaTime);
+
+	if (CurrentHealth >= HealthGValue)
+	{
+		TankState = ETankStatus::Green;
+	}
+	else if (CurrentHealth >= HealthYValue)
+	{
+		TankState = ETankStatus::Yellow;
+	}
+	else if (CurrentHealth >= HealthOValue)
+	{
+		TankState = ETankStatus::Orange;
+	}
+	else
+	{
+		TankState = ETankStatus::Red;
+	}
+}
+
+ETankStatus ATank::GetTankState() const
+{
+	return ETankStatus();
 }
 
 float ATank::GetHealthPercent() const
