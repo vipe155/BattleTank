@@ -37,6 +37,9 @@ public:
 
 	ETankStatus GetTankState() const;
 
+	UPROPERTY(EditAnywhere, BlueprintReadWrite, Category = Sound)
+		class USoundBase* DamageSound;
+
 protected:
 	UPROPERTY(BlueprintReadOnly, Category = State)
 		ETankStatus TankState = ETankStatus::Green;

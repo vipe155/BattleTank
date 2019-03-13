@@ -2,6 +2,7 @@
 
 #include "Tank.h"
 #include "Engine/World.h"
+#include "Classes/Kismet/GameplayStatics.h"
 
 // Sets default values
 ATank::ATank()
@@ -55,6 +56,12 @@ float ATank::TakeDamage(float DamageAmount, struct FDamageEvent const & DamageEv
 	int32 DamageToApply = FMath::Clamp(DamagePoints, 0, CurrentHealth);
 
 	CurrentHealth -= DamageToApply;
+	
+	if (DamageSound != NULL) 
+	{
+		UGameplayStatics::PlaySoundAtLocation(this, DamageSound, GetActorLocation());
+	}
+	
 	if (CurrentHealth <= 0)
 	{
 		TankDeath.Broadcast();
