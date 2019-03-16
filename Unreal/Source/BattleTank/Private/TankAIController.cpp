@@ -32,26 +32,40 @@ void ATankAIController::OnPossessedTankDeath()
 	GetPawn()->DetachFromControllerPendingDestroy();
 }
 
+void ATankAIController::SetPerceptionStatus(EPerceptionStatus NextPerceptionStatus)
+{
+	PerceptionStatus = NextPerceptionStatus;
+}
+
+EPerceptionStatus ATankAIController::GetPerceptionStatus() const
+{
+	return PerceptionStatus;
+}
+
 // Called every frame
 void ATankAIController::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 	
-	auto PlayerTank = GetWorld()->GetFirstPlayerController()->GetPawn();
-	auto AITank = GetPawn();
-	
-	if (!PlayerTank && AITank) { return; }
+	if (PerceptionStatus == EPerceptionStatus::Attacking) {
 
-	// Move towards player
-	MoveToActor(PlayerTank, AcceptanceRadius); 
 
-	// Start aiming towards player
-	auto TankPosition = AITank->GetActorLocation();
-	auto AimingComponent = AITank->FindComponentByClass<UTankAimingComponent>();
-	AimingComponent->AimAt(PlayerTank->GetActorLocation());
-	
-	if (AimingComponent->GetFiringState() == EFiringStatus::Locked)
-	{
-		AimingComponent->Fire(); 
+		auto PlayerTank = GetWorld()->GetFirstPlayerController()->GetPawn();
+		auto AITank = GetPawn();
+
+		if (!PlayerTank && AITank) { return; }
+
+		// Move towards player
+		MoveToActor(PlayerTank, AcceptanceRadius); 
+
+		// Start aiming towards player
+		auto TankPosition = AITank->GetActorLocation();
+		auto AimingComponent = AITank->FindComponentByClass<UTankAimingComponent>();
+		AimingComponent->AimAt(PlayerTank->GetActorLocation());
+
+		if (AimingComponent->GetFiringState() == EFiringStatus::Locked)
+		{
+			AimingComponent->Fire(); 
+		}
 	}
 }
