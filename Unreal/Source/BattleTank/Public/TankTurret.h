@@ -21,4 +21,10 @@ public:
 private:
 	UPROPERTY(EditDefaultsOnly, Category = Setup)
 		float MaxRotationDegreesPerSecond = 20; // default value
+
+	UPROPERTY(EditDefaultsOnly, Category = Setup)
+		float MaxRotationDegrees = 360; // default value
+
+	UPROPERTY(EditDefaultsOnly, Category = Setup)
+		float MinRotationDegrees = -360; // default value
 };
