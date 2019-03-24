@@ -46,6 +46,6 @@ private:
 
 	virtual void SetPawn(APawn* InPawn) override;
 
-	UFUNCTION()
+	UFUNCTION(BlueprintCallable, Category = "State")
 	void OnPlayerTankDeath();
 };
