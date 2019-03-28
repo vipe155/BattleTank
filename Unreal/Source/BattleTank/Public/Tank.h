@@ -31,9 +31,10 @@ public:
 
 	// returns current health as percentage, between 0-1
 	UFUNCTION(BlueprintPure, Category = Health)
-	float GetHealthPercent() const;
+		float GetHealthPercent() const;
 
-	FTankDelegate TankDeath;
+	UPROPERTY(BlueprintReadOnly)
+		FTankDelegate TankDeath;
 
 	ETankStatus GetTankState() const;
 
