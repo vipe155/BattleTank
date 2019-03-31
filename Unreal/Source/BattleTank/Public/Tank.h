@@ -33,7 +33,7 @@ public:
 	UFUNCTION(BlueprintPure, Category = Health)
 		float GetHealthPercent() const;
 
-	UPROPERTY(BlueprintReadOnly)
+	UPROPERTY(BlueprintAssignable, Category = State)
 		FTankDelegate TankDeath;
 
 	ETankStatus GetTankState() const;
